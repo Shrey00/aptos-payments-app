@@ -1,3 +1,4 @@
+import { ImageCopy } from '@carbon/icons-react';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
@@ -7,12 +8,16 @@ interface Props {
 
 export function WelcomeHero(props: Props) {
     return (
-        <Image
-            className={twMerge(props.className)}
-            src="/solana_pay_hero.svg"
-            alt="Welcome to Solana Pay"
-            width={400}
-            height={1000}
-        />
+        <div className={twMerge("px-[2rem] h-[100vh] bg-teal-950 flex justify-center items-center",props.className)}>
+            <Image
+                className='sm:h-[65px] sm:w-[280px] w-[145px] h-[35px]'
+                src="/Aptos_Primary_WHT.svg"
+                alt="Welcome to Solana Pay"
+                width={280}
+                height={65}
+                
+            />
+        </div>
+        
     );
 }

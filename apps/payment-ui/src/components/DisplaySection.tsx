@@ -20,7 +20,7 @@ const DisplaySection = () => {
                         <MdArrowBack color="white" size={30} />
                     </button>
                     <div className="flex flex-col mx-auto my-auto">
-                        <Image src="/solana-pay.svg" alt="Solana Pay Logo" width={80} height={200} />
+                        <Image src="/Aptos_Primary_WHT.svg" alt="Solana Pay Logo" width={80} height={200} />
                     </div>
                     <div />
                 </div>

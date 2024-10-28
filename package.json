@@ -40,5 +40,5 @@
         "turbo": "1.10.8"
     },
     "prettier": "@solana/prettier-config-solana",
-    "packageManager": "yarn@1.22.19"
+    "packageManager": "yarn@4.5.1"
 }

@@ -11,6 +11,8 @@ provider:
         - http://localhost:3001
         - https://merchant.solanapay.com
         - https://merchant-staging.solanapay.com
+        - https://aptos-payments-app-merchant-ui.vercel.app
+        - https://aptos-payments-app-payment-ui.vercel.app
         - https://pay.solanapay.com
         - https://pay-staging.solanapay.com
       allowedHeaders:

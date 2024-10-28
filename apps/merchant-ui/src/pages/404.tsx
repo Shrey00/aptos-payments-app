@@ -11,7 +11,7 @@ export default function Custom404() {
     return (
         <>
             <Head>
-                <title>Solana Pay - 404</title>
+                <title>Aptos Pay - 404</title>
                 <meta name="description" content="404 page" />
             </Head>
             <div className="h-screen w-screen">

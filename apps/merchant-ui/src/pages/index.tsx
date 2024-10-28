@@ -22,10 +22,10 @@ export default function Home({ isBlocked, isLoggedIn, country }: BlockedProps) {
     return (
         <>
             <Head>
-                <title>Solana Pay Merchant Portal</title>
+                <title>Aptos Pay Merchant Portal</title>
                 <meta
                     name="description"
-                    content="Manage your Shopify Solana Store Payments and Refunds with Solana Pay."
+                    content="Manage your Shopify Aptos Store Payments and Refunds with Aptos Pay."
                 />
             </Head>
             <div className={twMerge('grid', 'h-screen', 'w-screen', 'md:grid-cols-2')}>

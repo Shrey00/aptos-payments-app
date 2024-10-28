@@ -12,7 +12,7 @@ export function WelcomeHero(props: Props) {
             <Image
                 className='sm:h-[65px] sm:w-[280px] w-[145px] h-[35px]'
                 src="/Aptos_Primary_WHT.svg"
-                alt="Welcome to Solana Pay"
+                alt="Welcome to Aptos Payments App"
                 width={280}
                 height={65}
                 

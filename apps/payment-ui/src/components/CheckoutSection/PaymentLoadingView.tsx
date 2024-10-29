@@ -15,7 +15,7 @@ const StepBar = ({ completed, include }: { completed: boolean; include: boolean 
     />
 );
 
-const Circle = ({ color, children }: { color: string; children: ReactNode }) => (
+const Circle = ({ color, children }: { color: string; children?: ReactNode }) => (
     <div className={twMerge('w-5', 'h-5', 'rounded-full', 'flex', 'items-center', 'justify-center', color)}>
         {children}
     </div>

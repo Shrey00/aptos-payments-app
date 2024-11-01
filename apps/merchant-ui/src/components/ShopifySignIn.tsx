@@ -9,7 +9,9 @@ export function ShopifySignIn(props: Props) {
     return (
         <button
             onClick={() => {
-                switch (process.env.NEXT_PUBLIC_NODE_ENV) {
+                console.log(process.env.NEXT_PUBLIC_NODE_ENV);
+                const environment = process.env.NEXT_PUBLIC_NODE_ENV ? process.env.NEXT_PUBLIC_NODE_ENV : "staging";
+                switch (environment) {
                     case 'development':
                         window.location.href = 'https://localhost:4004/install';
                         break;

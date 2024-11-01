@@ -23,7 +23,7 @@
         "test:tx": "jest integration",
         "deploy:production:green": "serverless deploy --stage production --config serverless.green.yml",
         "deploy:staging:green": "serverless deploy --stage staging --config serverless.green.yml",
-        "deploy:staging:purple": "serverless deploy --stage staging --config serverless.purple.yml",
+        "deploy:staging:purple": "serverless deploy --stage staging --config serverless.purple.yml --verbose",
         "deploy:production:purple": "serverless deploy --stage production --config serverless.purple.yml",
         "prisma:push:dev": "dotenv -e .env.dev -- npx prisma db push",
         "prisma:push:staging": "dotenv -e .env.staging -- npx prisma db push",

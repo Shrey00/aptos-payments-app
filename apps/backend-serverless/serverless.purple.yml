@@ -404,42 +404,42 @@ functions:
     handler: src/handlers/websockets/disconnect.disconnect
     events:
       - websocket: $disconnect
-  safety-key-uploaded:
-    handler: src/handlers/webhooks/s3/safety-key-uploaded.safetyKeyUploaded
-    environment:
-      SAFETY_ARN: ${self:resources.Outputs.SafetyMachine.Value}
-    events:
-      - s3:
-          bucket: ${self:custom.single-use-bucket-name}
-          event: s3:ObjectCreated:*
-          rules:
-            - suffix: '.json'
-          existing: true
-    iamRoleStatementsName: safety-key-up-${self:provider.stage}
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - s3:GetObject
-        Resource: 'arn:aws:s3:::${self:custom.single-use-bucket-name}/*'
-      - Effect: Allow
-        Action:
-          - states:StartExecution
-        Resource: ${self:resources.Outputs.SafetyMachine.Value}
-  safety-key-sweep:
-    handler: src/handlers/webhooks/step-functions/safety-key-sweep.safetyKeySweep
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - s3:GetObject
-        Resource: 'arn:aws:s3:::${self:custom.single-use-bucket-name}/*'
-      - Effect: Allow
-        Action:
-          - s3:GetObject
-        Resource: 'arn:aws:s3:::${self:custom.gas-bucket-name}/*'
-      - Effect: Allow
-        Action:
-          - s3:DeleteObject
-        Resource: 'arn:aws:s3:::${self:custom.single-use-bucket-name}/*'
+  # safety-key-uploaded:
+  #   handler: src/handlers/webhooks/s3/safety-key-uploaded.safetyKeyUploaded
+  #   environment:
+  #     SAFETY_ARN: ${self:resources.Outputs.SafetyMachine.Value}
+  #   events:
+  #     - s3:
+  #         bucket: ${self:custom.single-use-bucket-name}
+  #         event: s3:ObjectCreated:*
+  #         rules:
+  #           - suffix: '.json'
+  #         existing: true
+  #   iamRoleStatementsName: safety-key-up-${self:provider.stage}
+  #   iamRoleStatements:
+  #     - Effect: Allow
+  #       Action:
+  #         - s3:GetObject
+  #       Resource: 'arn:aws:s3:::${self:custom.single-use-bucket-name}/*'
+  #     - Effect: Allow
+  #       Action:
+  #         - states:StartExecution
+  #       Resource: ${self:resources.Outputs.SafetyMachine.Value}
+  # safety-key-sweep:
+  #   handler: src/handlers/webhooks/step-functions/safety-key-sweep.safetyKeySweep
+  #   iamRoleStatements:
+  #     - Effect: Allow
+  #       Action:
+  #         - s3:GetObject
+  #       Resource: 'arn:aws:s3:::${self:custom.single-use-bucket-name}/*'
+  #     - Effect: Allow
+  #       Action:
+  #         - s3:GetObject
+  #       Resource: 'arn:aws:s3:::${self:custom.gas-bucket-name}/*'
+  #     - Effect: Allow
+  #       Action:
+  #         - s3:DeleteObject
+  #       Resource: 'arn:aws:s3:::${self:custom.single-use-bucket-name}/*'
   checkouts:
     handler: src/handlers/webhooks/checkouts.checkouts
     events:
@@ -467,19 +467,19 @@ stepFunctions:
             Resource:
               Fn::GetAtt: [retry-request, Arn]
             End: true
-    safety:
-      definition:
-        StartAt: wait_using_seconds
-        States:
-          wait_using_seconds:
-            Type: Wait
-            Seconds: 240
-            Next: sweep_safety
-          sweep_safety:
-            Type: Task
-            Resource:
-              Fn::GetAtt: [safety-key-sweep, Arn]
-            End: true
+    # safety:
+    #   definition:
+    #     StartAt: wait_using_seconds
+    #     States:
+    #       wait_using_seconds:
+    #         Type: Wait
+    #         Seconds: 240
+    #         Next: sweep_safety
+    #       sweep_safety:
+    #         Type: Task
+    #         Resource:
+    #           Fn::GetAtt: [safety-key-sweep, Arn]
+    #         End: true
 resources:
   Parameters:
     Stage:
@@ -490,10 +490,10 @@ resources:
       Description: The ARN of the retry machine
       Value:
         Fn::GetAtt: [RetryStepFunctionsStateMachine, Arn]
-    SafetyMachine:
-      Description: The ARN of the safety machine
-      Value:
-        Fn::GetAtt: [SafetyStepFunctionsStateMachine, Arn]
+    # SafetyMachine:
+    #   Description: The ARN of the safety machine
+    #   Value:
+    #     Fn::GetAtt: [SafetyStepFunctionsStateMachine, Arn]
     # GasBucketArn:
     #   Description: The arn of the gas bucket
     #   Value:

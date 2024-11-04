@@ -1,31 +1,8 @@
-# Solana Payments App
-
-<p align="center"><img src="apps/docs/docs/assets/solana_shopify.jpeg" alt="Solana_Shopify"/></p>
+# Aptos Payments App
 
 <p align="center">
-    <b>
-        <a href="https://commercedocs.solanapay.com">documentation</a>
-    </b>
-    &nbsp;|&nbsp;
-    <b>
-        <a href="https://www.youtube.com/channel/UCAbEl-Jr7kx2JqjTjhpoT-Q">walkthroughs</a>
-    </b>
-    &nbsp;|&nbsp;
-    <b>
-        <a href="https://apps.shopify.com/solana-pay">installation</a>
-    </b>
-    &nbsp;|&nbsp;
-    <b>
-        <a href="https://solanatest1.myshopify.com/">live store</a>
-    </b>
-    &nbsp;|&nbsp;
-    <b>
-        <a href="https://merchant.solanapay.com">merchant login</a>
-    </b>
-</p>
 
-Transact on Shopify using Solana
-
+    
 # Quickstart
 
 Pre Setup Dependencies:

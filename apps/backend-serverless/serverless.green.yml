@@ -17,6 +17,16 @@ provider:
     SENTRY_DSN: ${env:SENTRY_DSN}
     SENTRY_RELEASE: ${env:SENTRY_RELEASE}
     COIN_GECKO_API_KEY: ${env:COIN_GECKO_API_KEY}
+  vpc:
+    securityGroupIds:
+      - sg-09c0f64f41c513b3a    # RDS security group ID
+    subnetIds:
+      - subnet-0d9c383166dfc26d0   # VPC subnet IDs for RDS
+      - subnet-0dcc970ad44cf092e
+      - subnet-0ce45316ad96e0ebe
+      - subnet-0801ac275cf85de4a
+      - subnet-06b144dc8d97869c8
+      - subnet-0222814f0cb9950c6
 package:
   patterns:
     - 'node_modules/.prisma/**'

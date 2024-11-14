@@ -21,9 +21,10 @@ export const appInstallQueryParmSchema = object().shape({
 export type AppInstallQueryParam = InferType<typeof appInstallQueryParmSchema>;
 
 export const parseAndValidateAppInstallQueryParms = (appInstallQuery: unknown): AppInstallQueryParam => {
-    return parseAndValidateStrict(
+    const parsedQuery: AppInstallQueryParam = parseAndValidateStrict(
         appInstallQuery,
         appInstallQueryParmSchema,
         'Could not parse the app install query. Unknown Reason.',
-    );
+    ); 
+    return parsedQuery; 
 };
